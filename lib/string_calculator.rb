@@ -4,7 +4,9 @@ def add(input, delimiter = ',')
   elsif input.length == 1
     input.to_i
   else
-    a, b = input.split(delimiter)
-    a.to_i + b.to_i
+    input
+      .split(delimiter)
+      .map(&:to_i)
+      .reduce(0, :+)
   end
 end
