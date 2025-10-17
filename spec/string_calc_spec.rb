@@ -22,4 +22,8 @@ describe "#add" do
   it "throws an error when input string is invalid e.g. '1,\\n'" do
     expect { add("1,\n") }.to raise_error(RuntimeError, "Invalid string")
   end
+
+  it 'returns 3 when the input is "//;\n1;2"' do
+    expect(add("//;\n1;2")).to eq(3)
+  end
 end
