@@ -6,4 +6,8 @@ describe "#add" do
   it "returns the number D when the input is 'D'" do
     expect(add("2")).to eq(2)
   end
+
+  it "returns 6 when the input is '2,4'" do
+    expect(add("2,4")).to eq(6)
+  end
 end
