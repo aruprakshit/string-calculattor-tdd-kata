@@ -14,4 +14,8 @@ describe "#add" do
   it "returns 10 when the input is '2,4,1,3'" do
     expect(add("2,4,1,3")).to eq(10)
   end
+
+  it 'returns 6 when the input is "1\n2,3"' do
+    expect(add("1\n2,3")).to eq(6)
+  end
 end
