@@ -30,4 +30,8 @@ describe StringCalculator do
   it "throws an error 'negative numbers not allowed <negative_number>' when input string is '1,-2,3'" do
     expect { described_class.add('1,-2,3') }.to raise_error(RuntimeError, "negative numbers not allowed <-2>")
   end
+
+  it "throws an error 'negative numbers not allowed <negative_number>' when input string is '1;-2;-3;4'" do
+    expect { described_class.add('1;-2;-3;4') }.to raise_error(RuntimeError, "negative numbers not allowed <-2,-3>")
+  end
 end
