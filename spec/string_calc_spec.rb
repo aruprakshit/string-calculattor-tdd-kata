@@ -18,4 +18,8 @@ describe "#add" do
   it 'returns 6 when the input is "1\n2,3"' do
     expect(add("1\n2,3")).to eq(6)
   end
+
+  it "throws an error when input string is invalid e.g. '1,\\n'" do
+    expect { add("1,\n") }.to raise_error(RuntimeError, "Invalid string")
+  end
 end
