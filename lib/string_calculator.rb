@@ -1,5 +1,5 @@
 class StringCalculator
-  DEFAULT_DELIMITERS = [',', "\n"].freeze
+  DEFAULT_DELIMITERS = [',', "\n", ';'].freeze
   
   def self.add(input, delimiter = nil)
     new(input, delimiter).calculate
@@ -58,7 +58,7 @@ class StringCalculator
     negative_numbers = numbers.select(&:negative?)
     
     if negative_numbers.any?
-      raise RuntimeError, "negative numbers not allowed <#{negative_numbers.first}>"
+      raise RuntimeError, "negative numbers not allowed <#{negative_numbers.join(',')}>"
     end
   end
   
