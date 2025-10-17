@@ -48,6 +48,18 @@ class StringCalculator
     if @input.match?(/#{delimiter_pattern}#{delimiter_pattern}/)
       raise RuntimeError, "Invalid string"
     end
+    
+    validate_no_negative_numbers(delimiters)
+  end
+  
+  def validate_no_negative_numbers(delimiters)
+    delimiter_pattern = Regexp.union(delimiters)
+    numbers = @input.split(delimiter_pattern).map(&:to_i)
+    negative_numbers = numbers.select(&:negative?)
+    
+    if negative_numbers.any?
+      raise RuntimeError, "negative numbers not allowed <#{negative_numbers.first}>"
+    end
   end
   
   def parse_and_sum_numbers
