@@ -60,7 +60,3 @@ class StringCalculator
       .sum
   end
 end
-
-def add(input, delimiter = nil)
-  StringCalculator.add(input, delimiter)
-end
